@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Karnataka - Interactive Travel Website</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">Explore Karnataka</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#historical">Historical Places</a>
+            <a href="#waterfalls">Waterfalls</a>
+            <a href="#hillstations">Hill Stations</a>
+            <a href="#food">Food</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#travelinfo">Travel Info</a>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Explore Karnataka</h1>
+            <h2>Discover the Beauty of Karnataka</h2>
+            <p>
+                Explore magnificent temples, beautiful waterfalls,
+                peaceful hill stations, historical monuments and
+                delicious traditional foods.
+            </p>
+            <a href="#destinations" class="btn">Explore Now</a>
+            <button onclick="randomDestination()" class="btn">
+                Random Destination
+            </button>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section id="destinations">
+        <h2 class="section-title">Popular Tourist Destinations</h2>
+
+        <input type="text" id="searchInput"
+               placeholder="Search tourist places..."
+               onkeyup="searchPlaces()">
+
+        <div class="filter-buttons">
+            <button onclick="filterPlaces('all')">All</button>
+            <button onclick="filterPlaces('historical')">Historical</button>
+            <button onclick="filterPlaces('waterfall')">Waterfalls</button>
+            <button onclick="filterPlaces('hillstation')">Hill Stations</button>
+            <button onclick="filterPlaces('nature')">Nature</button>
+        </div>
+
+        <div class="destination-container" id="destinationContainer">
+
+            <div class="destination-card historical">
+                <img src="https://images.unsplash.com/photo-1600100397608-f010d8e9f6d4?auto=format&fit=crop&w=800&q=80"
+                     alt="Mysore Palace">
+                <h3>Mysore Palace</h3>
+                <p>Mysuru, Karnataka</p>
+                <p>Famous for royal architecture and beautiful illumination.</p>
+                <button onclick="addFavorite('Mysore Palace')">♡ Favorite</button>
+            </div>
+
+            <div class="destination-card historical">
+                <img src="https://images.unsplash.com/photo-1606293926075-69a00dbicu?auto=format&fit=crop&w=800&q=80"
+                     alt="Hampi">
+                <h3>Hampi</h3>
+                <p>Vijayanagara, Karnataka</p>
+                <p>Explore ancient temples and the Vijayanagara ruins.</p>
+                <button onclick="addFavorite('Hampi')">♡ Favorite</button>
+            </div>
+
+            <div class="destination-card waterfall">
+                <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=800&q=80"
+                     alt="Jog Falls">
+                <h3>Jog Falls</h3>
+                <p>Shivamogga, Karnataka</p>
+                <p>One of the most spectacular waterfalls in India.</p>
+                <button onclick="addFavorite('Jog Falls')">♡ Favorite</button>
+            </div>
+
+            <div class="destination-card hillstation">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80"
+                     alt="Coorg">
+                <h3>Coorg</h3>
+                <p>Kodagu, Karnataka</p>
+                <p>Known for coffee plantations and misty green hills.</p>
+                <button onclick="addFavorite('Coorg')">♡ Favorite</button>
+            </div>
+
+            <div class="destination-card hillstation">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80"
+                     alt="Nandi Hills">
+                <h3>Nandi Hills</h3>
+                <p>Chikkaballapur, Karnataka</p>
+                <p>Beautiful sunrise views and peaceful mountain scenery.</p>
+                <button onclick="addFavorite('Nandi Hills')">♡ Favorite</button>
+            </div>
+
+            <div class="destination-card nature">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+                     alt="Gokarna">
+                <h3>Gokarna</h3>
+                <p>Uttara Kannada, Karnataka</p>
+                <p>Famous for beaches, temples and coastal beauty.</p>
+                <button onclick="addFavorite('Gokarna')">♡ Favorite</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Historical Places -->
+    <section id="historical">
+        <h2 class="section-title">Historical Places of Karnataka</h2>
+
+        <div class="info-container">
+            <div class="info-card">
+                <h3>Hampi</h3>
+                <p>UNESCO World Heritage Site known for ancient Vijayanagara monuments.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Badami</h3>
+                <p>Famous for rock-cut cave temples and sandstone architecture.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Belur</h3>
+                <p>Known for the magnificent Chennakeshava Temple.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Mysore Palace</h3>
+                <p>A royal palace showcasing the heritage of the Wodeyar dynasty.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waterfalls -->
+    <section id="waterfalls">
+        <h2 class="section-title">Beautiful Waterfalls</h2>
+
+        <div class="info-container">
+            <div class="info-card">
+                <h3>Jog Falls</h3>
+                <p>Located in Shivamogga district.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Abbey Falls</h3>
+                <p>Located near Madikeri in Coorg.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Shivanasamudra Falls</h3>
+                <p>Located on the River Cauvery.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Gokak Falls</h3>
+                <p>Known for its horseshoe-shaped waterfall.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hill Stations -->
+    <section id="hillstations">
+        <h2 class="section-title">Hill Stations</h2>
+
+        <div class="info-container">
+            <div class="info-card">
+                <h3>Coorg</h3>
+                <p>Green coffee plantations and beautiful landscapes.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Chikmagalur</h3>
+                <p>Famous for coffee estates and mountain views.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Nandi Hills</h3>
+                <p>A popular destination for sunrise and trekking.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Kudremukh</h3>
+                <p>Known for green valleys and trekking trails.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Karnataka Food -->
+    <section id="food">
+        <h2 class="section-title">Famous Karnataka Foods</h2>
+
+        <div class="food-container">
+            <div class="food-card">
+                <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80"
+                     alt="Bisi Bele Bath">
+                <h3>Bisi Bele Bath</h3>
+                <p>A traditional rice and lentil dish.</p>
+            </div>
+
+            <div class="food-card">
+                <img src="https://images.unsplash.com/photo-1630383249896-424e482df921?auto=format&fit=crop&w=800&q=80"
+                     alt="Masala Dosa">
+                <h3>Mysore Masala Dosa</h3>
+                <p>A crispy dosa with spicy potato filling.</p>
+            </div>
+
+            <div class="food-card">
+                <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80"
+                     alt="Mysore Pak">
+                <h3>Mysore Pak</h3>
+                <p>A delicious traditional sweet.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section id="gallery">
+        <h2 class="section-title">Karnataka Photo Gallery</h2>
+
+        <div class="gallery-container">
+            <img src="https://images.unsplash.com/photo-1600100397608-f010d8e9f6d4?auto=format&fit=crop&w=800&q=80"
+                 alt="Karnataka Heritage" onclick="openImage(this)">
+
+            <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=800&q=80"
+                 alt="Waterfall" onclick="openImage(this)">
+
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80"
+                 alt="Mountain" onclick="openImage(this)">
+
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+                 alt="Beach" onclick="openImage(this)">
+        </div>
+
+        <div id="imageModal" onclick="closeImage()">
+            <span class="close">&times;</span>
+            <img id="modalImage">
+        </div>
+    </section>
+
+    <!-- Travel Information -->
+    <section id="travelinfo">
+        <h2 class="section-title">Travel Information</h2>
+
+        <div class="info-container">
+            <div class="info-card">
+                <h3>Best Time to Visit</h3>
+                <p>October to March is suitable for many Karnataka destinations.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Transportation</h3>
+                <p>Buses, trains, taxis and rental vehicles are available.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Accommodation</h3>
+                <p>Hotels, resorts, homestays and budget lodges are available.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Travel Tips</h3>
+                <p>Carry water, follow local rules and keep tourist places clean.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Budget Calculator -->
+    <section id="budget">
+        <h2 class="section-title">Travel Budget Calculator</h2>
+
+        <div class="budget-box">
+            <label for="destinationSelect">Choose Destination:</label>
+
+            <select id="destinationSelect">
+                <option value="1500">Mysore</option>
+                <option value="2000">Hampi</option>
+                <option value="2500">Coorg</option>
+                <option value="1800">Jog Falls</option>
+                <option value="1200">Nandi Hills</option>
+                <option value="2200">Chikmagalur</option>
+            </select>
+
+            <label for="days">Number of Days:</label>
+            <input type="number" id="days" min="1" value="3">
+
+            <label for="travelStyle">Travel Style:</label>
+            <select id="travelStyle">
+                <option value="1">Budget</option>
+                <option value="1.5">Comfort</option>
+                <option value="2.5">Premium</option>
+            </select>
+
+            <button onclick="calculateBudget()">Calculate Budget</button>
+
+            <h3 id="budgetResult">Estimated Budget: ₹0</h3>
+        </div>
+    </section>
+
+    <!-- Favorites -->
+    <section id="favorites">
+        <h2 class="section-title">My Favorite Places</h2>
+        <ul id="favoriteList"></ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3>Explore Karnataka</h3>
+        <p>Discover the beauty, culture and heritage of Karnataka.</p>
+        <p>&copy; 2026 Explore Karnataka. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

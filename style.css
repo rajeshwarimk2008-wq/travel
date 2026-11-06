@@ -1,0 +1,405 @@
+
+/* =====================================
+   EXPLORE KARNATAKA - MODERN CSS DESIGN
+   ===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f8f3;
+    color: #24352a;
+    line-height: 1.6;
+}
+
+/* HEADER */
+
+header {
+    background: linear-gradient(135deg, #123c2a, #26734d);
+    color: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #b8f3b0;
+    transform: translateY(-2px);
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 500px;
+    background:
+        linear-gradient(rgba(10, 40, 20, 0.55),
+        rgba(10, 40, 20, 0.65)),
+        url("https://images.unsplash.com/photo-1606293926075-69a00dbzoe4c");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h2 {
+    font-size: clamp(35px, 5vw, 60px);
+    margin-bottom: 15px;
+    text-shadow: 2px 3px 8px black;
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 700px;
+    margin-bottom: 25px;
+}
+
+/* BUTTONS */
+
+button {
+    background: #f4b942;
+    color: #183222;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin: 5px;
+}
+
+button:hover {
+    background: #d99b20;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* GENERAL SECTIONS */
+
+section {
+    padding: 65px 7%;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 34px;
+    color: #1d5838;
+    margin-bottom: 35px;
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: #f4b942;
+    margin: 12px auto;
+    border-radius: 5px;
+}
+
+/* SEARCH */
+
+#searchInput {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 25px;
+    padding: 15px 20px;
+    border: 2px solid #c8dfce;
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+    background: white;
+}
+
+#searchInput:focus {
+    border-color: #26734d;
+    box-shadow: 0 0 10px rgba(38, 115, 77, 0.2);
+}
+
+/* FILTER BUTTONS */
+
+.filter-buttons {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* DESTINATION CARDS */
+
+.destination-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.destination-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(20, 60, 30, 0.1);
+    transition: 0.4s ease;
+    border: 1px solid #e2eee3;
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(20, 60, 30, 0.2);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.destination-card:hover img {
+    transform: scale(1.05);
+}
+
+.destination-card h3 {
+    color: #1d5838;
+    padding: 15px 20px 5px;
+    font-size: 22px;
+}
+
+.destination-card p {
+    padding: 0 20px;
+    color: #667568;
+}
+
+.destination-card button {
+    margin: 15px 20px 20px;
+}
+
+/* CONTENT CARDS */
+
+.info-container,
+.food-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.info-card,
+.food-card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+    border-bottom: 5px solid #26734d;
+    box-shadow: 0 5px 18px rgba(20, 60, 30, 0.08);
+    transition: 0.3s;
+}
+
+.info-card:hover,
+.food-card:hover {
+    transform: translateY(-7px);
+    background: #eaf5eb;
+}
+
+.info-card h3,
+.food-card h3 {
+    color: #26734d;
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+/* GALLERY */
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.gallery-container img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.04);
+    filter: brightness(1.1);
+}
+
+/* IMAGE MODAL */
+
+#imageModal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+#modalImage {
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+#imageModal span {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 45px;
+    cursor: pointer;
+}
+
+/* TRAVEL BUDGET CALCULATOR */
+
+#budgetCalculator {
+    background: white;
+    max-width: 650px;
+    margin: auto;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(20, 60, 30, 0.12);
+}
+
+#budgetCalculator label {
+    display: block;
+    margin: 15px 0 8px;
+    font-weight: bold;
+    color: #1d5838;
+}
+
+#budgetCalculator select,
+#budgetCalculator input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #c8dfce;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #f9fcf9;
+}
+
+#budgetResult {
+    margin-top: 25px;
+    text-align: center;
+    color: #26734d;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* FAVORITES */
+
+#favoriteList {
+    list-style: none;
+    max-width: 600px;
+    margin: auto;
+}
+
+#favoriteList li {
+    background: white;
+    padding: 15px 20px;
+    margin: 10px 0;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 10px rgba(20, 60, 30, 0.08);
+}
+
+/* FOOTER */
+
+footer {
+    background: #123c2a;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 15px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero {
+        min-height: 400px;
+    }
+
+    .hero h2 {
+        font-size: 35px;
+    }
+
+    section {
+        padding: 45px 5%;
+    }
+
+    section h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .destination-container,
+    .info-container,
+    .food-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    #budgetCalculator {
+        padding: 20px;
+    }
+}
+
